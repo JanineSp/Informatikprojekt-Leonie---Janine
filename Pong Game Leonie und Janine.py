@@ -1,6 +1,7 @@
 import turtle
 # Spielbildschirm
 sc = turtle.Screen()
+sc.title("Pong game")
 sc.bgcolor("Green")
 sc.setup(width=1200, height=800)
 
