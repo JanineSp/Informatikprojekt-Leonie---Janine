@@ -1,23 +1,19 @@
 import pygame
 from pygame.locals import *
 
-# Initialize Pygame
 pygame.init()
 
-# Set up the game window
+# Spielfeld
 window_width = 1000
 window_height = 500
 window = pygame.display.set_mode((window_width, window_height))
 pygame.display.set_caption("Pong Game")
 
-#Hintergrundbild
+# Hintergrundbild
 image = pygame.image.load("Tischtennistisch.jpg")
-window.blit(image, (1000, 500))
-pygame.image.save(image, "Tischtennistisch.jpg")
+window.blit(image, (0, 0))
 
-
-
-# Set up colorswindow
+# Farbzuweisung
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 
@@ -88,7 +84,7 @@ while running:
 
     # Clear the screen
     window.fill(BLACK)
-    window.blit(image, (1000, 500))
+    window.blit(image, (0, 0))
 
     # Draw the paddles and ball
     pygame.draw.rect(window, WHITE, (paddle1_x, paddle1_y, paddle_width, paddle_height))
