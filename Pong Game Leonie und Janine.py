@@ -16,8 +16,10 @@ window.blit(image, (0, 0))
 # Farbzuweisung
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
+PINK = (255, 0, 255)
+ORANGE = (255, 140, 0)
 
-# Set up the paddles
+# Schläger
 paddle_width = 10
 paddle_height = 60
 paddle_speed = 5
@@ -26,17 +28,17 @@ paddle1_y = window_height // 2 - paddle_height // 2
 paddle2_x = window_width - paddle_width - 10
 paddle2_y = window_height // 2 - paddle_height // 2
 
-# Set up the ball
+# Spielball
 ball_radius = 8
 ball_x = window_width // 2
 ball_y = window_height // 2
 ball_dx = 3
 ball_dy = 3
 
-# Set up the scores
+# Punktestand
 score1 = 0
 score2 = 0
-font = pygame.font.Font(None, 36)
+font = pygame.font.Font(None, 50)
 
 # Game loop
 running = True
@@ -87,9 +89,9 @@ while running:
     window.blit(image, (0, 0))
 
     # Draw the paddles and ball
-    pygame.draw.rect(window, WHITE, (paddle1_x, paddle1_y, paddle_width, paddle_height))
-    pygame.draw.rect(window, WHITE, (paddle2_x, paddle2_y, paddle_width, paddle_height))
-    pygame.draw.circle(window, WHITE, (ball_x, ball_y), ball_radius)
+    pygame.draw.rect(window, ORANGE, (paddle1_x, paddle1_y, paddle_width, paddle_height))
+    pygame.draw.rect(window, ORANGE, (paddle2_x, paddle2_y, paddle_width, paddle_height))
+    pygame.draw.circle(window, PINK, (ball_x, ball_y), ball_radius)
 
     # Draw the scores
     score_text = font.render(str(score1), True, WHITE)
